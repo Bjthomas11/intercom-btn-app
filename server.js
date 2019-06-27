@@ -40,28 +40,6 @@ const listener = app.listen(process.env.PORT, () => {
   
 */
 
-// Demo using plain javascript
-// () => {
-//     var button = document.querySelector(".primary");
-//   var clickBtn = document.querySelector('#ember1044');
-
-//   // Disable the button on initial page load
-//   button.disabled = true;
-
-//   //add event listener
-//   clickBtn.addEventListener('click', function(event) {
-//       button.disabled = !button.disabled;
-//     console.log("test");
-//   });
-// };
-
-// () => {
-//   const button = document.querySelector(".primary");
-//   button.addEventListener("click", function(){
-//     console.log("test");
-//   })
-// };
-
 // Lead api https://api.intercom.io/contacts
 
 // LIST ALL LEADS
