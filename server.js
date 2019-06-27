@@ -3,14 +3,12 @@
 "use strict";
 const express = require('express');
 const bodyParser = require('body-parser');
-const router = express.Router();
-const fastJson = require('fast-json-stringify');
 var Intercom = require('intercom-client');
 // const jsdom = require("jsdom");
 // const {JSDOM} = jsdom;
 
 const app = express();
-router.use(express.json());
+app.use(bodyParser);
 
 // require("jsdom").env("", function(err, window) {
 //     if (err) {
@@ -33,6 +31,7 @@ router.use(express.json());
 const listener = app.listen(process.env.PORT, () => {
   console.log('Your app is listening on port ' + listener.address().port);
 });
+
 
 /* 
   This is an endpoint that Intercom will POST HTTP request when the card needs to be initialized.
@@ -75,6 +74,7 @@ app.post("/initialize", (request, response) => {
 });
 app.post("/submit", (request, response) => { 
   const body = request.body;
+  console.log(body);
   response.send({
     canvas: {
       content: {
