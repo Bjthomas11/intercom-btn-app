@@ -60,7 +60,6 @@ const listener = app.listen(process.env.PORT, () => {
 //     }
 //   }
 
-
 app.post("/initialize", (request, response) => {
   const body = request.body;
   response.send({
