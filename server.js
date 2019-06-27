@@ -75,12 +75,12 @@ app.post("/initialize", (request, response) => {
 });
 app.post("/submit", (request, response) => { 
   const body = request.body;
-  console.log(body);
+  
   response.send({
     canvas: {
       content: {
         components: [
-          { type: "text", text: "test"//body.user_id 
+          { type: "text", text: "TEST"
           },
         ], 
       },
