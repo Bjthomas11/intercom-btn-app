@@ -73,7 +73,10 @@ app.post("/initialize", (request, response) => {
   });
 });
 app.post("/submit", (request, response) => { 
-  const body = request.body;  
+  const body = request.body;
+  if(body != ""){
+    
+  }
   response.send({
     canvas: {
       content: {
