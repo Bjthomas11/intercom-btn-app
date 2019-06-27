@@ -37,8 +37,9 @@ const listener = app.listen(process.env.PORT, () => {
   
 */
 
+
 // Demo using plain javascript
-() => {
+function test(){
     var button = document.querySelector(".primary");
   var clickBtn = document.querySelector('#ember1044');
 
@@ -52,12 +53,17 @@ const listener = app.listen(process.env.PORT, () => {
   });
 };
 
-() => {
+function test2(){
   const button = document.querySelector(".primary");
   button.addEventListener("click", function(){
     console.log("test");
   })
 };
+
+function test3(){
+  test();
+  test2();
+}
 
 
 app.post("/initialize", (request, response) => {
