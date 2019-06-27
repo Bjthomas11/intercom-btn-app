@@ -60,6 +60,8 @@ const listener = app.listen(process.env.PORT, () => {
 //   })
 // };
 
+// token: dG9rOjIyM2JkMzA2XzBhNGZfNDkwOF9hYmEzXzg4NDM0ZDljNjM5MjoxOjA
+
 
 app.post("/initialize", (request, response) => {
   const body = request.body;
