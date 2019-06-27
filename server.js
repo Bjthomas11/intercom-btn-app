@@ -67,7 +67,7 @@ app.post("/initialize", (request, response) => {
     canvas: {
       content: {
         components: [
-          { type: "button", label: "Submit", style: "primary", id: "lead-button", action: {type: "submit"} },
+          { type: "button", label: "Submit Lead", style: "primary", id: "lead-button", action: {type: "submit"} },
         ], 
       },
     },
