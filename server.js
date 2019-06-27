@@ -73,7 +73,9 @@ const listener = app.listen(process.env.PORT, () => {
 // -H 'Authorization:Bearer dG9rOjIyM2JkMzA2XzBhNGZfNDkwOF9hYmEzXzg4NDM0ZDljNjM5MjoxOjA=' \
 
 
-router.post("/initialize", (request, response) => {
+
+
+app.post("/initialize", (request, response) => {
   const body = request.body;
   response.send({
     canvas: {
@@ -85,7 +87,7 @@ router.post("/initialize", (request, response) => {
     },
   });
 });
-router.post("/submit", (request, response) => {  
+app.post("/submit", (request, response) => { 
   const body = request.body;  
   response.send({
     canvas: {
@@ -98,3 +100,7 @@ router.post("/submit", (request, response) => {
     },
   });
 });
+
+app.post("https://api.intercom.io/contacts/", (req,res) => {
+  const required
+})
