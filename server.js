@@ -4,6 +4,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
+const fastJson = require('fast-json-stringify');
 var Intercom = require('intercom-client');
 // const jsdom = require("jsdom");
 // const {JSDOM} = jsdom;
@@ -74,14 +75,12 @@ app.post("/initialize", (request, response) => {
 });
 app.post("/submit", (request, response) => { 
   const body = request.body;
-  if(body != ""){
-    
-  }
+  //console.log(body);
   response.send({
     canvas: {
       content: {
         components: [
-          { type: "text", text: "Lead Succesfully Submitted" 
+          { type: "text", text: JSON.stringify(body) 
           },
         ], 
       },

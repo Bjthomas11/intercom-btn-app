@@ -2,6 +2,7 @@ dependencies:
   axios: 0.19.0
   express: 4.17.1
   express-router: 0.0.1
+  fast-json-stringify: 1.15.3
   intercom-client: 2.10.6
   jquery: 3.4.1
   jsdom: 15.1.1
@@ -210,6 +211,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-s2nW+128E+7PUk+RsHD+7cNXzzQ=
+  /deepmerge/3.3.0:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha512-GRQOafGHwMHpjPx9iCvTgpu9NojZ49q794EEL94JVEw6VaeA8XTUyBKvAkOOjBX9oJNiV6G3P+T+tihFjo2TqA==
   /delayed-stream/1.0.0:
     dev: false
     engines:
@@ -357,6 +364,13 @@ packages:
     dev: false
     resolution:
       integrity: sha1-1RQsDK7msRifh9OnYREGT4bIu/I=
+  /fast-json-stringify/1.15.3:
+    dependencies:
+      ajv: 6.10.0
+      deepmerge: 3.3.0
+    dev: false
+    resolution:
+      integrity: sha512-p+ucnySTbrUQ9M7u8ygFIxrmpG8B+8O4/PvLDdh+RqMMgj/h6OoDb7U2lP+kqg3PDclQBFbSIArRhkorFwZLLg==
   /fast-levenshtein/2.0.6:
     dev: false
     resolution:
@@ -1080,6 +1094,7 @@ specifiers:
   axios: ^0.19.0
   express: ^4.16.4
   express-router: ^0.0.1
+  fast-json-stringify: ^1.15.3
   intercom-client: ^2.10.5
   jquery: ^3.4.1
   jsdom: ^15.1.1
