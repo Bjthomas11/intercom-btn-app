@@ -4,8 +4,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const jsdom = require("jsdom");
+const {JSDOM} = jsdom;
 
 const app = express();
+
+// require("jsdom").env("", function(err, window) {
+//     if (err) {
+//         console.error(err);
+//         return;
+//     }
+ 
+//     var $ = require("jquery")(window);
+// });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -76,8 +86,8 @@ app.post("/submit", (request, response) => {
   });
 });
 
-$(".primary").on("click", function(){
-  console.log("test");
-});
+// $(".primary").on("click", function(){
+//   console.log("test");
+// });
 
 // var phoneNum = $('#ember1295 > span').text();
