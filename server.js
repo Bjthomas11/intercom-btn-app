@@ -3,11 +3,13 @@
 "use strict";
 const express = require('express');
 const bodyParser = require('body-parser');
+const router = express.Router();
 var Intercom = require('intercom-client');
 // const jsdom = require("jsdom");
 // const {JSDOM} = jsdom;
 
 const app = express();
+router.use(express.json());
 
 // require("jsdom").env("", function(err, window) {
 //     if (err) {
@@ -18,14 +20,14 @@ const app = express();
 //     var $ = require("jquery")(window);
 // });
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(express.static(__dirname));
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// app.use(express.static(__dirname));
 
 // http://expressjs.com/en/starter/static-files.html
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.use(express.static('public'));
+// app.use(express.static('public'));
         
 const listener = app.listen(process.env.PORT, () => {
   console.log('Your app is listening on port ' + listener.address().port);
@@ -71,7 +73,7 @@ const listener = app.listen(process.env.PORT, () => {
 // -H 'Authorization:Bearer dG9rOjIyM2JkMzA2XzBhNGZfNDkwOF9hYmEzXzg4NDM0ZDljNjM5MjoxOjA=' \
 
 
-app.post("/initialize", (request, response) => {
+router.post("/initialize", (request, response) => {
   const body = request.body;
   response.send({
     canvas: {
@@ -83,7 +85,7 @@ app.post("/initialize", (request, response) => {
     },
   });
 });
-app.post("/submit", (request, response) => {  
+router.post("/submit", (request, response) => {  
   const body = request.body;  
   response.send({
     canvas: {

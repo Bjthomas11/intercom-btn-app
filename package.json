@@ -13,7 +13,8 @@
     "express": "^4.16.4",
     "jsdom": "^15.1.1",
     "jquery": "^3.4.1",
-    "intercom-client": "^2.10.5"
+    "intercom-client": "^2.10.5",
+    "express-router": "^0.0.1"
   },
   "engines": {
     "node": "8.x"
