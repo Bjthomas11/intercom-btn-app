@@ -60,7 +60,10 @@ const listener = app.listen(process.env.PORT, () => {
 //   })
 // };
 
+Lead api https://api.intercom.io/contacts
+
 // token: dG9rOjIyM2JkMzA2XzBhNGZfNDkwOF9hYmEzXzg4NDM0ZDljNjM5MjoxOjA
+// -H 'Authorization:Bearer dG9rOjIyM2JkMzA2XzBhNGZfNDkwOF9hYmEzXzg4NDM0ZDljNjM5MjoxOjA='
 
 
 app.post("/initialize", (request, response) => {
