@@ -3,8 +3,9 @@
 "use strict";
 const express = require('express');
 const bodyParser = require('body-parser');
-const jsdom = require("jsdom");
-const {JSDOM} = jsdom;
+var Intercom = require('intercom-client');
+// const jsdom = require("jsdom");
+// const {JSDOM} = jsdom;
 
 const app = express();
 
@@ -38,26 +39,26 @@ const listener = app.listen(process.env.PORT, () => {
 */
 
 // Demo using plain javascript
-() => {
-    var button = document.querySelector(".primary");
-  var clickBtn = document.querySelector('#ember1044');
+// () => {
+//     var button = document.querySelector(".primary");
+//   var clickBtn = document.querySelector('#ember1044');
 
-  // Disable the button on initial page load
-  button.disabled = true;
+//   // Disable the button on initial page load
+//   button.disabled = true;
 
-  //add event listener
-  clickBtn.addEventListener('click', function(event) {
-      button.disabled = !button.disabled;
-    console.log("test");
-  });
-};
+//   //add event listener
+//   clickBtn.addEventListener('click', function(event) {
+//       button.disabled = !button.disabled;
+//     console.log("test");
+//   });
+// };
 
-() => {
-  const button = document.querySelector(".primary");
-  button.addEventListener("click", function(){
-    console.log("test");
-  })
-};
+// () => {
+//   const button = document.querySelector(".primary");
+//   button.addEventListener("click", function(){
+//     console.log("test");
+//   })
+// };
 
 
 app.post("/initialize", (request, response) => {
@@ -85,9 +86,3 @@ app.post("/submit", (request, response) => {
     },
   });
 });
-
-// $(".primary").on("click", function(){
-//   console.log("test");
-// });
-
-// var phoneNum = $('#ember1295 > span').text();

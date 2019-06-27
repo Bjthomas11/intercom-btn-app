@@ -1,5 +1,6 @@
 dependencies:
   express: 4.17.1
+  intercom-client: 2.10.6
   jquery: 3.4.1
   jsdom: 15.1.1
 packages:
@@ -87,6 +88,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-pDAdOJtqQ/m2f/PKEaP2Y342Dp4=
+  /bluebird/3.5.5:
+    dev: false
+    resolution:
+      integrity: sha512-5am6HnnfN+urzt4yfg7IgTbotDjIT/u8AJpEt0sIU9FtXfVeezXAPKswrG+xKUCOYAINpSdgZVDU6QFh+cuH3w==
   /body-parser/1.19.0:
     dependencies:
       bytes: 3.1.0
@@ -404,6 +409,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-71lZziiDnsuabfdYiUeWdCVyKuqwWi23L8YeIgV9jSSZHCtb6wB1BKWooH7L3tn4/FuZJMVWyNaIDr4RGmaSYw==
+  /htmlencode/0.0.4:
+    dev: false
+    resolution:
+      integrity: sha1-9+LWr74YqHp45jujMI51N2Z0Dj8=
   /http-errors/1.7.2:
     dependencies:
       depd: 1.1.2
@@ -455,6 +464,17 @@ packages:
     dev: false
     resolution:
       integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
+  /intercom-client/2.10.6:
+    dependencies:
+      bluebird: 3.5.5
+      htmlencode: 0.0.4
+      lodash: 4.17.11
+      request: 2.88.0
+    dev: false
+    engines:
+      node: '>= v0.10.0'
+    resolution:
+      integrity: sha512-vxWS+xSnQGBWoN9u7zA3Nymu+Zv0fJRrz/v55XsbUHd5tjrK+DQk4urYyJ39fFlZYhG5jVW0tXDjeCOHkBN3Vw==
   /ip-regex/2.1.0:
     dev: false
     engines:
@@ -1025,5 +1045,6 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   express: ^4.16.4
+  intercom-client: ^2.10.5
   jquery: ^3.4.1
   jsdom: ^15.1.1
