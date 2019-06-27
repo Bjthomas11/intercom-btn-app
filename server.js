@@ -72,7 +72,15 @@ const listener = app.listen(process.env.PORT, () => {
 // token: dG9rOjIyM2JkMzA2XzBhNGZfNDkwOF9hYmEzXzg4NDM0ZDljNjM5MjoxOjA
 // -H 'Authorization:Bearer dG9rOjIyM2JkMzA2XzBhNGZfNDkwOF9hYmEzXzg4NDM0ZDljNjM5MjoxOjA=' \
 
-
+// const requiredFields = ["firstName", "lastName", "address",  "phoneNumber", "address", "city", "state", "zip"];
+//   for (let i = 0; i < requiredFields.length; i++){
+//     const field = requiredFields[i];
+//     if(!(field in request.body)){
+//       const message = `Missing ${field} field`;
+//       console.error(message);
+//       return response.status(400).send(message);
+//     }
+//   }
 
 
 app.post("/initialize", (request, response) => {
@@ -100,7 +108,3 @@ app.post("/submit", (request, response) => {
     },
   });
 });
-
-app.post("https://api.intercom.io/contacts/", (req,res) => {
-  const required
-})
