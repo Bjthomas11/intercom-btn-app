@@ -8,7 +8,7 @@ var Intercom = require('intercom-client');
 // const {JSDOM} = jsdom;
 
 const app = express();
-app.use(bodyParser);
+// app.use(bodyParser);
 
 // require("jsdom").env("", function(err, window) {
 //     if (err) {
