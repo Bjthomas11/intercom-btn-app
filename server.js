@@ -72,9 +72,14 @@ app.post("/initialize", (request, response) => {
     },
   });
 });
+
+
 app.post("/submit", (request, response) => { 
+  app.get("https://api.intercom.io/contacts", (req, res) => {
+    
   const body = request.body;
   console.log(body);
+});
   response.send({
     canvas: {
       content: {
