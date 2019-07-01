@@ -41,10 +41,11 @@ app.post("/submit", (request, response) => {
   // console.log(request);
   // console.log(response);
   const body = request.body;  
-  console.log(body);
+  // console.log(body);
   console.log(body.customer.name);
   console.log(body.customer.email);
   console.log(body.customer.phone);
+  console.log(body.customer.custom_attributes);
   response.send({
     canvas: {
       content: {
