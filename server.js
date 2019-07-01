@@ -1,4 +1,4 @@
-*-------------------------------------------------
+
 /* INSERT CODE HERE */
 "use strict";
 const express = require('express');
@@ -77,7 +77,7 @@ app.post("/initialize", (request, response) => {
 
 app.post("/submit", (request, response) => { 
   const body = request.body;
-  console.log(body);  
+  console.log(request.body);  
   response.send({
     canvas: {
       content: {
