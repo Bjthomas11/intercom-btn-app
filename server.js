@@ -66,7 +66,7 @@ app.post("/initialize", (request, response) => {
     canvas: {
       content: {
         components: [
-          { type: "button", label: "Submit Lead", style: "primary", id: "lead-button", action: {type: "submit"} },
+          { type: "button", label: "Not functioning yet", style: "primary", id: "lead-button", action: {type: "submit"} },
         ], 
       },
     },
@@ -89,3 +89,5 @@ app.post("/submit", (request, response) => {
   });
 });
 
+// https://glossy-century-1.glitch.me/initialize
+// https://glossy-century-1.glitch.me/submit
