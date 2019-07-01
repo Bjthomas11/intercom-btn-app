@@ -69,7 +69,7 @@ app.post("/submit", (request, response) => {
   if(name && phone && street_address && city && state && zip){
     $(document).ready(function() {
       var lead = new Object();
-      lead.APIKey = "7845444REFID=47";
+      lead.APIKey = "7845444";
       lead.name = body.customer.name;
       lead.phone = body.customer.phone;
       lead.email = body.customer.email;
@@ -78,7 +78,7 @@ app.post("/submit", (request, response) => {
       lead.state = body.customer.custom_attributes["Property State or Province"];
       lead.zip = body.customer.custom_attributes["Property Postal Code"];
 
-      var APIKey = "7845444REFID=47";
+      var APIKey = "7845444";
       var RefID = "47";
 
       function make_base_auth(APIKey, RefID) {
@@ -92,7 +92,7 @@ app.post("/submit", (request, response) => {
         type: "POST",
         contentType: "application/json",
 
-        data: JSON.stringify(lead),
+        data: lead,
         beforeSend: function(data) {
           data.setRequestHeader(
             "Authorization",
@@ -100,7 +100,7 @@ app.post("/submit", (request, response) => {
           );
         },
         success: function(data, textStatus, xhr) {
-          console.log(JSON.stringify(data));
+          console.log(data);
         },
         error: function(xhr, textStatus, errorThrown) {
           console.log("Error");
