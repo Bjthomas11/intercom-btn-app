@@ -30,7 +30,7 @@ app.post("/initialize", (request, response) => {
     canvas: {
       content: {
         components: [
-          { type: "button", label: "Click Me!", style: "primary", id: "url_button", action: {type: "submit"} },
+          { type: "button", label: "Not Functioning", style: "primary", id: "url_button", action: {type: "submit"} },
         ], 
       },
     },
@@ -42,6 +42,9 @@ app.post("/submit", (request, response) => {
   // console.log(response);
   const body = request.body;  
   console.log(body);
+  console.log(body.customer.name);
+  console.log(body.customer.email);
+  console.log(body.customer.phone);
   response.send({
     canvas: {
       content: {
