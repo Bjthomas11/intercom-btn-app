@@ -42,13 +42,13 @@ app.post("/submit", (request, response) => {
   // console.log(response);
   const body = request.body;  
   // console.log(body);
-  console.log(body.customer.name);
-  console.log(body.customer.email);
-  console.log(body.customer.phone);
-  console.log(body.customer.custom_attributes["Property Street Address"]);
-  console.log(body.customer.custom_attributes["Property City"]);
-  console.log(body.customer.custom_attributes["Property State or Province"]);
-  console.log(body.customer.custom_attributes["Property Postal Code"]);
+  // console.log(body.customer.name);
+  // console.log(body.customer.email);
+  // console.log(body.customer.phone);
+  // console.log(body.customer.custom_attributes["Property Street Address"]);
+  // console.log(body.customer.custom_attributes["Property City"]);
+  // console.log(body.customer.custom_attributes["Property State or Province"]);
+  // console.log(body.customer.custom_attributes["Property Postal Code"]);
   var name = body.customer.name;
   var email = body.customer.email;
   var phone = body.customer.phone;
@@ -68,11 +68,8 @@ app.post("/submit", (request, response) => {
 //   }
 //   console.log(test1);
   
-  if(name != ""){
+  if(name && phone && street_address && city && state && zip){
     console.log("test")
-  }
- 
-  
   response.send({
     canvas: {
       content: {
@@ -83,4 +80,16 @@ app.post("/submit", (request, response) => {
       },
     },
   });
+  } else {
+    response.send({
+    canvas: {
+      content: {
+        components: [
+          { type: "text", text: "not valid", 
+           style: "header", align: "center" },
+        ], 
+      },
+    },
+  });
+  }
 });
