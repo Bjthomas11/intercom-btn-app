@@ -45,7 +45,18 @@ app.post("/submit", (request, response) => {
   console.log(body.customer.name);
   console.log(body.customer.email);
   console.log(body.customer.phone);
-  console.log(body.customer.custom_attributes);
+  console.log(body.customer.custom_attributes["Property Street Address"]);
+  console.log(body.customer.custom_attributes["Property City"]);
+  console.log(body.customer.custom_attributes["Property State or Province"]);
+  console.log(body.customer.custom_attributes["Property Postal Code"]);
+  var name = body.customer.name;
+  var email = body.customer.email;
+  var phone = body.customer.phone;
+  var street_address = body.customer.custom_attributes["Property Street Address"];
+  var city = body.customer.custom_attributes["Property City"];
+  var state = body.customer.custom_attributes["Property State or Province"];
+  var zip = body.customer.custom_attributes["Property Postal Code"];
+  
   response.send({
     canvas: {
       content: {
