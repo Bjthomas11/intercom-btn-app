@@ -62,7 +62,6 @@ const listener = app.listen(process.env.PORT, () => {
 
 app.post("/initialize", (request, response) => {
   const body = request.body;
-  console.log(body);
   response.send({
     canvas: {
       content: {
@@ -77,7 +76,7 @@ app.post("/initialize", (request, response) => {
 
 app.post("/submit", (request, response) => { 
   const body = request.body;
-  console.log(request.body);  
+  console.log(request);
   response.send({
     canvas: {
       content: {
