@@ -57,16 +57,16 @@ app.post("/submit", (request, response) => {
   // console.log(body.customer.custom_attributes["Property City"]);
   // console.log(body.customer.custom_attributes["Property State or Province"]);
   // console.log(body.customer.custom_attributes["Property Postal Code"]);
-  var firstName = body.customer.custom_attributes["First Name"];
-  var lastName = body.customer.custom_attributes["Last Name"];
+  var firstName = body.customer.custom_attributes.firstName;
+  var lastName = body.customer.custom_attributes.lastName;
   var email = body.customer.email;
-  var phone = body.customer.phone;
+  var phone = body.customer.phoneNumber;
   var street_address = body.customer.custom_attributes["Property Street Address"];
   var city = body.customer.custom_attributes["Property City"];
   var state = body.customer.custom_attributes["Property State or Province"];
   var zip = body.customer.custom_attributes["Property Postal Code"];
-   //console.log(body.customer);
-  // console.log(body.customer.custom_attributes);
+   console.log(body.customer);
+   console.log(body.customer.custom_attributes);
   
   
   if(firstName && lastName && phone && street_address && city && state && zip){
