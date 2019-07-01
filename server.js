@@ -1,6 +1,7 @@
 /* INSERT CODE HERE */
 const express = require('express');
 const bodyParser = require('body-parser');
+var btoa = require('btoa');
 const app = express();
 var jsdom = require("jsdom");
 const { JSDOM } = jsdom;
@@ -69,7 +70,6 @@ app.post("/submit", (request, response) => {
     $(document).ready(function() {
       var lead = new Object();
       lead.APIKey = "7845444REFID=47";
-      lead.AppID = "12";
       lead.name = body.customer.name;
       lead.phone = body.customer.phone;
       lead.email = body.customer.email;
@@ -104,6 +104,9 @@ app.post("/submit", (request, response) => {
         },
         error: function(xhr, textStatus, errorThrown) {
           console.log("Error");
+          console.log(errorThrown);
+          console.log(textStatus);
+          console.log(xhr);
         }
       });
     });

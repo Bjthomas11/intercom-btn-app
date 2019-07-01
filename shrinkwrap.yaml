@@ -1,6 +1,7 @@
 dependencies:
   axios: 0.19.0
   body-parser: 1.19.0
+  btoa: 1.2.1
   express: 4.17.1
   express-router: 0.0.1
   fast-json-stringify: 1.15.3
@@ -124,6 +125,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-bRFnI4NnjO6cnyLmOV/7PVoDEMJChlcfN0z4s1YMBY989/SvlfMI1lgCnkFUs53e9gQF+w7qu7XdllSTiSl8Aw==
+  /btoa/1.2.1:
+    dev: false
+    engines:
+      node: '>= 0.4.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-SB4/MIGlsiVkMcHmT+pSmIPoNDoHg+7cMzmt3Uxt628MTz2487DKSqK/fuhFBrkuqrYv5UCEnACpF4dTFNKc/g==
   /bytes/3.1.0:
     dev: false
     engines:
@@ -1094,6 +1102,7 @@ shrinkwrapVersion: 3
 specifiers:
   axios: ^0.19.0
   body-parser: ^1.19.0
+  btoa: ^1.2.1
   express: ^4.16.4
   express-router: ^0.0.1
   fast-json-stringify: ^1.15.3
