@@ -2,6 +2,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+var jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const { window } = new JSDOM();
+const { document } = (new JSDOM('')).window;
+global.document = document;
+
+var $ = jQuery = require('jquery')(window);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -63,13 +70,13 @@ app.post("/submit", (request, response) => {
       var lead = new Object();
       lead.APIKey = "7845444REFID=47";
       lead.AppID = "12";
-      lead.name = body.customer.name.val();
-      lead.phone = body.customer.phone.val();
-      lead.email = body.customer.email.val();
-      lead.street_address = body.customer.custom_attributes["Property Street Address"].val();
-      lead.city = body.customer.custom_attributes["Property City"].val();
-      lead.state = body.customer.custom_attributes["Property State or Province"].val();
-      lead.zip = body.customer.custom_attributes["Property Postal Code"].val();
+      lead.name = body.customer.name;
+      lead.phone = body.customer.phone;
+      lead.email = body.customer.email;
+      lead.street_address = body.customer.custom_attributes["Property Street Address"];
+      lead.city = body.customer.custom_attributes["Property City"];
+      lead.state = body.customer.custom_attributes["Property State or Province"];
+      lead.zip = body.customer.custom_attributes["Property Postal Code"];
 
       var APIKey = "7845444REFID=47";
       var RefID = "47";
