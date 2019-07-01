@@ -58,6 +58,8 @@ app.post("/submit", (request, response) => {
   // console.log(body.customer.custom_attributes["Property State or Province"]);
   // console.log(body.customer.custom_attributes["Property Postal Code"]);
   var name = body.customer.name;
+  var firstName = body.customer.firstName;
+  var lastName = body.customer.lastName;
   var email = body.customer.email;
   var phone = body.customer.phone;
   var street_address = body.customer.custom_attributes["Property Street Address"];
@@ -72,7 +74,8 @@ app.post("/submit", (request, response) => {
     $(document).ready(function() {
       var lead = new Object();
       // lead.APIKey = "7845444";
-      lead.name = body.customer.name;
+      lead.firstName = body.customer.firstName;
+      lead.lastName = body.customer.lastName;
       lead.phone = body.customer.phone;
       lead.street_address = body.customer.custom_attributes["Property Street Address"];
       lead.city = body.customer.custom_attributes["Property City"];
