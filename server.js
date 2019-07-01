@@ -59,6 +59,7 @@ app.post("/submit", (request, response) => {
   
   
   if(name && phone && street_address && city && state && zip){
+    $(document).ready(function() {
       var lead = new Object();
       lead.APIKey = "7845444REFID=47";
       lead.AppID = "12";
@@ -98,6 +99,7 @@ app.post("/submit", (request, response) => {
           console.log("Error");
         }
       });
+    });
     console.log("test");
     response.send({
       canvas: {
