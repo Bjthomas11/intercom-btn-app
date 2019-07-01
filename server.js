@@ -24,18 +24,9 @@ const listener = app.listen(process.env.PORT, () => {
   This can happen when your teammate inserts the app into the inbox, or a new conversation is viewed.
 */
 
-app.post("/initialize", (request, response) => {
-  var name = body.customer.name;
-  var email = body.customer.email;
-  var phone = body.customer.phone;
-  var street_address = body.customer.custom_attributes["Property Street Address"];
-  var city = body.customer.custom_attributes["Property City"];
-  var state = body.customer.custom_attributes["Property State or Province"];
-  var zip = body.customer.custom_attributes["Property Postal Code"];
-  if(name && phone && street_address && city && state && zip){
-    console.log("test");
-    const body = request.body;  
-    response.send({
+app.post("/initialize", (request, response) => {  
+  const body = request.body;  
+  response.send({
     canvas: {
       content: {
         components: [
@@ -44,19 +35,6 @@ app.post("/initialize", (request, response) => {
       },
     },
   });
-  } else {
-    return false;
-    response.send({
-    canvas: {
-      content: {
-        components: [
-          { type: "text", text: "not valid", 
-           style: "header", align: "center" },
-        ], 
-      },
-    },
-  });
-  }
 });
 
 app.post("/submit", (request, response) => {  
@@ -91,7 +69,6 @@ app.post("/submit", (request, response) => {
       },
     });
   } else {
-    return false;
     response.send({
     canvas: {
       content: {
