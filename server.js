@@ -65,8 +65,8 @@ app.post("/submit", (request, response) => {
   var city = body.customer.custom_attributes["Property City"];
   var state = body.customer.custom_attributes["Property State or Province"];
   var zip = body.customer.custom_attributes["Property Postal Code"];
-   console.log(body.customer);
-  console.log(body.customer.custom_attributes);
+   //console.log(body.customer);
+  // console.log(body.customer.custom_attributes);
   
   
   if(firstName && lastName && phone && street_address && city && state && zip){
@@ -129,7 +129,7 @@ app.post("/submit", (request, response) => {
     canvas: {
       content: {
         components: [
-          { type: "text", text: "not valid", 
+          { type: "text", text: "Please fill out all fields", 
            style: "header", align: "center" },
         ], 
       },
