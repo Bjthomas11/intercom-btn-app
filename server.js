@@ -3,13 +3,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 var btoa = require('btoa');
 const app = express();
-var jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-const { window } = new JSDOM();
-const { document } = (new JSDOM('')).window;
-global.document = document;
+// var jsdom = require("jsdom");
+// const { JSDOM } = jsdom;
+// const { window } = new JSDOM();
+// const { document } = (new JSDOM('')).window;
+// global.document = document;
 
-var $ = jQuery = require('jquery')(window);
+// var $ = jQuery = require('jquery')(window);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -66,13 +66,12 @@ app.post("/submit", (request, response) => {
   var zip = body.customer.custom_attributes["Property Postal Code"];
   
   
-  if(name && email && phone && street_address && city && state && zip){
+  if(name && phone && street_address && city && state && zip){
     $(document).ready(function() {
       var lead = new Object();
-      lead.APIKey = "7845444";
+      // lead.APIKey = "7845444";
       lead.name = body.customer.name;
       lead.phone = body.customer.phone;
-      lead.email = body.customer.email;
       lead.street_address = body.customer.custom_attributes["Property Street Address"];
       lead.city = body.customer.custom_attributes["Property City"];
       lead.state = body.customer.custom_attributes["Property State or Province"];
@@ -91,7 +90,6 @@ app.post("/submit", (request, response) => {
         url: "http://arch-form.advestors.net/v2/leads/create",
         type: "POST",
         contentType: "application/json",
-
         data: lead,
         beforeSend: function(data) {
           data.setRequestHeader(
