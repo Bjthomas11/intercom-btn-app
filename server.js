@@ -76,7 +76,7 @@ app.post("/initialize", (request, response) => {
 
 app.post("/submit", (request, response) => { 
   const body = request.body;
-  console.log(request);
+  console.log(body);
   response.send({
     canvas: {
       content: {
