@@ -3,13 +3,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 var btoa = require('btoa');
 const app = express();
-// var jsdom = require("jsdom");
-// const { JSDOM } = jsdom;
-// const { window } = new JSDOM();
-// const { document } = (new JSDOM('')).window;
-// global.document = document;
+var jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const { window } = new JSDOM();
+const { document } = (new JSDOM('')).window;
+global.document = document;
 
-// var $ = jQuery = require('jquery')(window);
+var $ = jQuery = require('jquery')(window);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
