@@ -56,9 +56,11 @@ app.post("/submit", (request, response) => {
   var city = body.customer.custom_attributes["Property City"];
   var state = body.customer.custom_attributes["Property State or Province"];
   var zip = body.customer.custom_attributes["Property Postal Code"];
+  
+  
   if(name && phone && street_address && city && state && zip){
       var lead = new Object();
-      lead.APIKey = "1234234";
+      lead.APIKey = "7845444REFID=47";
       lead.AppID = "12";
       lead.name = body.customer.name.val();
       lead.phone = body.customer.phone.val();
@@ -67,12 +69,9 @@ app.post("/submit", (request, response) => {
       lead.city = body.customer.custom_attributes["Property City"].val();
       lead.state = body.customer.custom_attributes["Property State or Province"].val();
       lead.zip = body.customer.custom_attributes["Property Postal Code"].val();
-      lead.leadSource = "test";
-      lead.custom1 = $("#custom1").val();
-      lead.id = "1";
 
-      var APIKey = "1234234";
-      var RefID = "12";
+      var APIKey = "7845444REFID=47";
+      var RefID = "47";
 
       function make_base_auth(APIKey, RefID) {
         var tok = btoa(APIKey) + ":" + btoa(RefID);
@@ -124,3 +123,6 @@ app.post("/submit", (request, response) => {
   });
   }
 });
+
+// username: 7845444
+// pswd: 47
