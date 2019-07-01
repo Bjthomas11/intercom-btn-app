@@ -60,26 +60,27 @@ app.post("/submit", (request, response) => {
   var firstName = body.customer.custom_attributes.firstName;
   var lastName = body.customer.custom_attributes.lastName;
   var email = body.customer.email;
-  var phone = body.customer.phoneNumber;
-  var street_address = body.customer.custom_attributes["Property Street Address"];
-  var city = body.customer.custom_attributes["Property City"];
-  var state = body.customer.custom_attributes["Property State or Province"];
-  var zip = body.customer.custom_attributes["Property Postal Code"];
+  var phoneNumber = body.customer.custom_attributes.phoneNumber;
+  var address = body.customer.custom_attributes.address;
+  var city = body.customer.custom_attributes.city;
+  var state = body.customer.custom_attributes.state;
+  var zip = body.customer.custom_attributes.zip;
    console.log(body.customer);
    console.log(body.customer.custom_attributes);
   
   
-  if(firstName && lastName && phone && street_address && city && state && zip){
+  if(firstName && lastName && phoneNumber && address && city && state && zip){
     $(document).ready(function() {
       var lead = new Object();
       // lead.APIKey = "7845444";
-      lead.firstName = body.customer.custom_attributes["First Name"];
-      lead.lastName = body.customer.custom_attributes["Last Name"];
-      lead.phone = body.customer.phone;
-      lead.street_address = body.customer.custom_attributes["Property Street Address"];
-      lead.city = body.customer.custom_attributes["Property City"];
-      lead.state = body.customer.custom_attributes["Property State or Province"];
-      lead.zip = body.customer.custom_attributes["Property Postal Code"];
+    lead.firstName = body.customer.custom_attributes.firstName;
+    lead.lastName = body.customer.custom_attributes.lastName;
+    lead.email = body.customer.email;
+    lead.phoneNumber = body.customer.custom_attributes.phoneNumber;
+    lead.address = body.customer.custom_attributes.address;
+    lead.city = body.customer.custom_attributes.city;
+    lead.state = body.customer.custom_attributes.state;
+    lead.zip = body.customer.custom_attributes.zip;
 
       var APIKey = "7845444";
       var RefID = "47";
