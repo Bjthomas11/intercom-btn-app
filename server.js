@@ -67,6 +67,10 @@ app.post("/submit", (request, response) => {
 //     test1 += obj1[test2];
 //   }
 //   console.log(test1);
+  
+  if(name != ""){
+    console.log("test")
+  }
  
   
   response.send({
