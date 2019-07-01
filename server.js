@@ -89,5 +89,14 @@ app.post("/submit", (request, response) => {
   });
 });
 
+app.post("/submit", (request,response) => {
+  console.log(request);
+});
+
+app.post("/submit", (request,response) => {
+  console.log(response);
+})
+
+
 // https://glossy-century-1.glitch.me/initialize
 // https://glossy-century-1.glitch.me/submit
