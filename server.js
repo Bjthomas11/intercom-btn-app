@@ -57,25 +57,24 @@ app.post("/submit", (request, response) => {
   // console.log(body.customer.custom_attributes["Property City"]);
   // console.log(body.customer.custom_attributes["Property State or Province"]);
   // console.log(body.customer.custom_attributes["Property Postal Code"]);
-  var name = body.customer.name;
-  var firstName = body.customer.firstName;
-  var lastName = body.customer.lastName;
+  var firstName = body.customer.custom_attributes["First Name"];
+  var lastName = body.customer.custom_attributes["Last Name"];
   var email = body.customer.email;
   var phone = body.customer.phone;
   var street_address = body.customer.custom_attributes["Property Street Address"];
   var city = body.customer.custom_attributes["Property City"];
   var state = body.customer.custom_attributes["Property State or Province"];
   var zip = body.customer.custom_attributes["Property Postal Code"];
-  console.log(body.customer);
+   console.log(body.customer);
   console.log(body.customer.custom_attributes);
   
   
-  if(name && phone && street_address && city && state && zip){
+  if(firstName && lastName && phone && street_address && city && state && zip){
     $(document).ready(function() {
       var lead = new Object();
       // lead.APIKey = "7845444";
-      lead.firstName = body.customer.firstName;
-      lead.lastName = body.customer.lastName;
+      lead.firstName = body.customer.custom_attributes["First Name"];
+      lead.lastName = body.customer.custom_attributes["Last Name"];
       lead.phone = body.customer.phone;
       lead.street_address = body.customer.custom_attributes["Property Street Address"];
       lead.city = body.customer.custom_attributes["Property City"];
