@@ -64,6 +64,8 @@ app.post("/submit", (request, response) => {
   var city = body.customer.custom_attributes["Property City"];
   var state = body.customer.custom_attributes["Property State or Province"];
   var zip = body.customer.custom_attributes["Property Postal Code"];
+  console.log(body.customer);
+  console.log(body.customer.custom_attributes);
   
   
   if(name && phone && street_address && city && state && zip){
