@@ -57,6 +57,18 @@ app.post("/submit", (request, response) => {
   var state = body.customer.custom_attributes["Property State or Province"];
   var zip = body.customer.custom_attributes["Property Postal Code"];
   
+//   var test1 = "";
+//   var obj1 = {
+//     name: body.customer.name,
+//     email: body.customer.email
+//   }
+  
+//   for(var test2 in obj1){
+//     test1 += obj1[test2];
+//   }
+//   console.log(test1);
+ 
+  
   response.send({
     canvas: {
       content: {
