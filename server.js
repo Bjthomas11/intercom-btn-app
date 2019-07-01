@@ -66,7 +66,7 @@ app.post("/submit", (request, response) => {
   var zip = body.customer.custom_attributes["Property Postal Code"];
   
   
-  if(name && phone && street_address && city && state && zip){
+  if(name && email && phone && street_address && city && state && zip){
     $(document).ready(function() {
       var lead = new Object();
       lead.APIKey = "7845444";
