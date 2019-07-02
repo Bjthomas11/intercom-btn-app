@@ -39,7 +39,7 @@ app.post("/initialize", (request, response) => {
     canvas: {
       content: {
         components: [
-          { type: "button", label: "Not Functioning", style: "primary", id: "url_button", action: {type: "submit"} },
+          { type: "button", label: "Lead (r)", style: "primary", id: "url_button", action: {type: "submit"} },
         ], 
       },
     },
@@ -80,7 +80,7 @@ app.post("/submit", (request, response) => {
  
   if(firstName && lastName && phone && address && city && state && zip){
     $(document).ready(function() {
-      var lead = new Object();
+    var lead = new Object();
       // lead.name = name;
     lead.firstName = firstName;
     lead.lastName = lastName;
@@ -117,7 +117,7 @@ app.post("/submit", (request, response) => {
           console.log(data);
         },
         error: function(xhr, textStatus, errorThrown) {
-          console.log("API");
+          console.log("API ERROR: Lead not Submitted");
           console.log(errorThrown);
           console.log(textStatus);
           console.log(xhr);
