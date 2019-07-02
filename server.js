@@ -65,7 +65,7 @@ app.post("/submit", (request, response) => {
   var city = body.customer.custom_attributes.city;
   var state = body.customer.custom_attributes.state;
   var zip = body.customer.custom_attributes.zip;
-   console.log(body.customer);
+   console.log(body.customer.email);
    console.log(body.customer.custom_attributes);
   
   
