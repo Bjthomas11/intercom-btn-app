@@ -2,7 +2,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 var btoa = require('btoa');
-const app = express();
 var jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const { window } = new JSDOM();
@@ -10,6 +9,8 @@ const { document } = (new JSDOM('')).window;
 global.document = document;
 
 var $ = jQuery = require('jquery')(window);
+
+const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -116,19 +117,18 @@ app.post("/submit", (request, response) => {
           console.log(data);
         },
         error: function(xhr, textStatus, errorThrown) {
-          console.log("Error");
+          console.log("API");
           console.log(errorThrown);
           console.log(textStatus);
           console.log(xhr);
         }
       });
     });
-    console.log("test");
     response.send({
       canvas: {
         content: {
           components: [
-            { type: "text", text: "test", 
+            { type: "text", text: "Lead successfully submitted.", 
              style: "header", align: "center" },
           ], 
         },
