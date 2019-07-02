@@ -57,8 +57,9 @@ app.post("/submit", (request, response) => {
   // console.log(body.customer.custom_attributes["Property City"]);
   // console.log(body.customer.custom_attributes["Property State or Province"]);
   // console.log(body.customer.custom_attributes["Property Postal Code"]);
-  var firstName = body.customer.custom_attributes.firstName;
-  var lastName = body.customer.custom_attributes.lastName;
+  //var firstName = body.customer.custom_attributes.firstName;
+  //var lastName = body.customer.custom_attributes.lastName;
+  var name = body.customer.name;
   var email = body.customer.email;
   var phoneNumber = body.customer.custom_attributes.phoneNumber;
   var address = body.customer.custom_attributes.address;
@@ -67,20 +68,28 @@ app.post("/submit", (request, response) => {
   var zip = body.customer.custom_attributes.zip;
    console.log(body.customer);
    console.log(body.customer.custom_attributes);
+  var parts = name.split(" ");
+  var firstName = parts[0];
+  if(parts.length > 2){
+    var lastName = parts[parts.length];
+  }else{
+    var lastName = parts[1];
+  }
+  console.log(firstName)
   
   
   if(firstName && lastName && phoneNumber && address && city && state && zip){
     $(document).ready(function() {
       var lead = new Object();
       // lead.APIKey = "7845444";
-    lead.firstName = body.customer.custom_attributes.firstName;
-    lead.lastName = body.customer.custom_attributes.lastName;
-    lead.email = body.customer.email;
-    lead.phoneNumber = body.customer.custom_attributes.phoneNumber;
-    lead.address = body.customer.custom_attributes.address;
-    lead.city = body.customer.custom_attributes.city;
-    lead.state = body.customer.custom_attributes.state;
-    lead.zip = body.customer.custom_attributes.zip;
+    lead.firstName = firstName;
+    lead.lastName = lastName;
+    lead.email = email;
+    lead.phoneNumber = phoneNumber;
+    lead.address = address;
+    lead.city = city;
+    lead.state = state;
+    lead.zip = zip;
 
       var APIKey = "7845444";
       var RefID = "47";
