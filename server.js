@@ -48,17 +48,7 @@ app.post("/initialize", (request, response) => {
 app.post("/submit", (request, response) => {  
   // console.log(request);
   // console.log(response);
-  const body = request.body;  
-  // console.log(body);
-  // console.log(body.customer.name);
-  // console.log(body.customer.email);
-  // console.log(body.customer.phone);
-  // console.log(body.customer.custom_attributes["Property Street Address"]);
-  // console.log(body.customer.custom_attributes["Property City"]);
-  // console.log(body.customer.custom_attributes["Property State or Province"]);
-  // console.log(body.customer.custom_attributes["Property Postal Code"]);
-  //var firstName = body.customer.custom_attributes.firstName;
-  //var lastName = body.customer.custom_attributes.lastName;
+  const body = request.body;
   var name = body.customer.name;
   var email = body.customer.email;
   var phone = body.customer.phone;
@@ -85,7 +75,11 @@ app.post("/submit", (request, response) => {
   var LastName = body.customer.custom_attributes["lastName"];
   // FINSIHED TESTING
   
-
+if(name == null){
+  var name = "";
+}
+  
+  
   if(firstName && lastName && phone && address && city && state && zip){
     $(document).ready(function() {
       var lead = new Object();
@@ -146,6 +140,12 @@ app.post("/submit", (request, response) => {
     });
   } else {
     console.log("empty");
+    console.log(`${firstName} - first name`);
+    console.log(`${lastName} - last name`);
+    console.log(name);
+    console.log(parts);
+    console.log(body.customer);
+    console.log(body.customer.custom_attributes);
     response.send({
     canvas: {
       content: {
