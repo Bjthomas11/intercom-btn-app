@@ -80,6 +80,11 @@ app.post("/submit", (request, response) => {
   console.log(body.customer);
   console.log(body.customer.custom_attributes);
   
+  // JUST FOR TESTING PURPOSES
+  var FirstName = body.customer.custom_attributes["firstName"];
+  var LastName = body.customer.custom_attributes["lastName"];
+  // FINSIHED TESTING
+  
 
   if(firstName && lastName && phone && address && city && state && zip){
     $(document).ready(function() {
@@ -93,6 +98,8 @@ app.post("/submit", (request, response) => {
     lead.city = city;
     lead.state = state;
     lead.zip = zip;
+    lead.leadSource = "test";
+    lead.id = "1";
 
       var APIKey = "7845444";
       var RefID = "47";
@@ -104,7 +111,7 @@ app.post("/submit", (request, response) => {
       }
 
       $.ajax({
-        url: "http://arch-form.advestors.net/v3/leads/create",
+        url: "http://arch-form.advestors.net/v2/leads/create",
         type: "POST",
         contentType: "application/json",
         data: JSON.stringify(lead),
