@@ -80,6 +80,8 @@ app.post("/submit", (request, response) => {
   console.log(body.customer);
   console.log(body.customer.custom_attributes);
   
+  if(name)
+  
   
   if(firstName && lastName && phone && address && city && state && zip){
     $(document).ready(function() {
