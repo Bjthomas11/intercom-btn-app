@@ -80,9 +80,7 @@ app.post("/submit", (request, response) => {
   console.log(body.customer);
   console.log(body.customer.custom_attributes);
   
-  if(name)
-  
-  
+
   if(firstName && lastName && phone && address && city && state && zip){
     $(document).ready(function() {
       var lead = new Object();
@@ -109,7 +107,7 @@ app.post("/submit", (request, response) => {
         url: "http://arch-form.advestors.net/v3/leads/create",
         type: "POST",
         contentType: "application/json",
-        data: lead,
+        data: JSON.stringify(lead),
         beforeSend: function(data) {
           data.setRequestHeader(
             "Authorization",
