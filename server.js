@@ -104,7 +104,7 @@ app.post("/submit", (request, response) => {
       }
 
       $.ajax({
-        url: "http://arch-form.advestors.net/v2/leads/create",
+        url: "http://arch-form.advestors.net/v3/leads/create",
         type: "POST",
         contentType: "application/json",
         data: lead,
