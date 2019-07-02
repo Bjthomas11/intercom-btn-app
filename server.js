@@ -56,13 +56,23 @@ app.post("/submit", (request, response) => {
   var city = body.customer.custom_attributes["Property City"];
   var state = body.customer.custom_attributes["Property State or Province"];
   var zip = body.customer.custom_attributes["Property Postal Code"];
-  var parts = name.split(" ");
-  var firstName = parts[0];
-  if(parts.length > 2){
+
+  try {
+    var name = body.customer.name;
+    var parts = name.split(" ");
+    var firstName = parts[0];
+    if(parts.length > 2){
     var lastName = parts[parts.length];
-  }else{
+    }else{
     var lastName = parts[1];
+    }
   }
+  catch(error){
+    console.error(error);
+  }
+  
+  
+  
   console.log(`${firstName} - first name`);
   console.log(`${lastName} - last name`);
   console.log(name);
@@ -74,16 +84,10 @@ app.post("/submit", (request, response) => {
   var FirstName = body.customer.custom_attributes["firstName"];
   var LastName = body.customer.custom_attributes["lastName"];
   // FINSIHED TESTING
-  
-if(name == null){
-  var name = "";
-}
-  
-  
+ 
   if(firstName && lastName && phone && address && city && state && zip){
     $(document).ready(function() {
       var lead = new Object();
-      // lead.APIKey = "7845444";
       // lead.name = name;
     lead.firstName = firstName;
     lead.lastName = lastName;
