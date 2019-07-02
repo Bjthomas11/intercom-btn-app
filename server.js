@@ -1,4 +1,4 @@
-/* INSERT CODE HERE */
+
 const express = require('express');
 const bodyParser = require('body-parser');
 var btoa = require('btoa');
@@ -46,8 +46,6 @@ app.post("/initialize", (request, response) => {
 });
 
 app.post("/submit", (request, response) => {  
-  // console.log(request);
-  // console.log(response);
   const body = request.body;
   var name = body.customer.name;
   var email = body.customer.email;
@@ -72,18 +70,12 @@ app.post("/submit", (request, response) => {
   }
   
   
-  
+  // LOG TESTING
   // console.log(`${firstName} - first name`);
   // console.log(`${lastName} - last name`);
-  // console.log(name);
   // console.log(parts);
   // console.log(body.customer);
   // console.log(body.customer.custom_attributes);
-  
-  // JUST FOR TESTING PURPOSES
-  // var FirstName = body.customer.custom_attributes["firstName"];
-  //  var LastName = body.customer.custom_attributes["lastName"];
-  // FINSIHED TESTING
  
   if(firstName && lastName && phone && address && city && state && zip){
     $(document).ready(function() {
