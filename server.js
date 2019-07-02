@@ -73,16 +73,16 @@ app.post("/submit", (request, response) => {
   
   
   
-  console.log(`${firstName} - first name`);
-  console.log(`${lastName} - last name`);
-  console.log(name);
-  console.log(parts);
-  console.log(body.customer);
-  console.log(body.customer.custom_attributes);
+  // console.log(`${firstName} - first name`);
+  // console.log(`${lastName} - last name`);
+  // console.log(name);
+  // console.log(parts);
+  // console.log(body.customer);
+  // console.log(body.customer.custom_attributes);
   
   // JUST FOR TESTING PURPOSES
-  var FirstName = body.customer.custom_attributes["firstName"];
-  var LastName = body.customer.custom_attributes["lastName"];
+  // var FirstName = body.customer.custom_attributes["firstName"];
+  //  var LastName = body.customer.custom_attributes["lastName"];
   // FINSIHED TESTING
  
   if(firstName && lastName && phone && address && city && state && zip){
@@ -154,7 +154,7 @@ app.post("/submit", (request, response) => {
     canvas: {
       content: {
         components: [
-          { type: "text", text: "Please fill out all fields", 
+          { type: "text", text: "Please complete all of the qualification fields before submitting", 
            style: "header", align: "center" },
         ], 
       },
@@ -162,6 +162,3 @@ app.post("/submit", (request, response) => {
   });
   }
 });
-
-// username: 7845444
-// pswd: 47
