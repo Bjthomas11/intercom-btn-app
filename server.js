@@ -66,8 +66,6 @@ app.post("/submit", (request, response) => {
   var city = body.customer.custom_attributes.city;
   var state = body.customer.custom_attributes.state;
   var zip = body.customer.custom_attributes.zip;
-   console.log(body.customer);
-   console.log(body.customer.custom_attributes);
   var parts = name.split(" ");
   var firstName = parts[0];
   if(parts.length > 2){
@@ -75,7 +73,12 @@ app.post("/submit", (request, response) => {
   }else{
     var lastName = parts[1];
   }
-  console.log(firstName)
+  console.log(firstName);
+  console.log(lastName);
+  console.log(name);
+  console.log(parts);
+  console.log(body.customer);
+   console.log(body.customer.custom_attributes);
   
   
   if(firstName && lastName && phoneNumber && address && city && state && zip){
