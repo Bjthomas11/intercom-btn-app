@@ -73,12 +73,12 @@ app.post("/submit", (request, response) => {
   }else{
     var lastName = parts[1];
   }
-  console.log(firstName);
-  console.log(lastName);
+  console.log(`${firstName} - first name`);
+  console.log(`${lastName} - last name`);
   console.log(name);
   console.log(parts);
   console.log(body.customer);
-   console.log(body.customer.custom_attributes);
+  console.log(body.customer.custom_attributes);
   
   
   if(firstName && lastName && phoneNumber && address && city && state && zip){
