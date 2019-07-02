@@ -61,11 +61,11 @@ app.post("/submit", (request, response) => {
   //var lastName = body.customer.custom_attributes.lastName;
   var name = body.customer.name;
   var email = body.customer.email;
-  var phoneNumber = body.customer.custom_attributes.phoneNumber;
-  var address = body.customer.custom_attributes.address;
-  var city = body.customer.custom_attributes.city;
-  var state = body.customer.custom_attributes.state;
-  var zip = body.customer.custom_attributes.zip;
+  var phone = body.customer.phone;
+  var address = body.customer.custom_attributes["Property Street Address"];
+  var city = body.customer.custom_attributes["Property City"];
+  var state = body.customer.custom_attributes["Property State or Province"];
+  var zip = body.customer.custom_attributes["Property Postal Code"];
   var parts = name.split(" ");
   var firstName = parts[0];
   if(parts.length > 2){
@@ -81,14 +81,14 @@ app.post("/submit", (request, response) => {
   console.log(body.customer.custom_attributes);
   
   
-  if(firstName && lastName && phoneNumber && address && city && state && zip){
+  if(firstName && lastName && phone && address && city && state && zip){
     $(document).ready(function() {
       var lead = new Object();
       // lead.APIKey = "7845444";
     lead.firstName = firstName;
     lead.lastName = lastName;
+    lead.phoneNumber = phone;
     lead.email = email;
-    lead.phoneNumber = phoneNumber;
     lead.address = address;
     lead.city = city;
     lead.state = state;
