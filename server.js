@@ -133,20 +133,7 @@ app.post("/submit", (request, response) => {
           ], 
         },
       },
-      app.post("/initialize", (request, response) => {  
-    const body = request.body;  
-    response.send({
-      canvas: {
-        content: {
-          components: [
-            { type: "button", label: "Submit Lead", style: "primary", id: "url_button", action: {type: "submit"} },
-          ], 
-        },
-      },
     });
-});
-    });
-    
   } else {
     console.log("empty");
     console.log(`${firstName} - first name`);
