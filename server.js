@@ -130,6 +130,7 @@ app.post("/submit", (request, response) => {
           components: [
             { type: "text", text: "Lead successfully submitted.", 
              style: "header", align: "center" },
+            {type: "button", label: "Submit Lead", style: "primary", id: "url_button", action: {type: "submit"} },
           ], 
         },
       },
@@ -148,6 +149,7 @@ app.post("/submit", (request, response) => {
         components: [
           { type: "text", text: "Please complete all of the qualification fields before submitting", 
            style: "header", align: "center" },
+          {type: "button", label: "Submit Lead", style: "primary", id: "url_button", action: {type: "submit"} },
         ], 
       },
     },
